@@ -1,0 +1,38 @@
+int A = 13;                      // declares a variable 
+                                 // assigns value of 13
+int B = 12;                      // declares a variable 
+                                 // assigns value of 12 
+int C = 11;                      // declares a variable
+                                 // assigns value of 11 
+int D = 10;                      // declares a variable
+                                 // assigns value of 10  
+int E = 9;                       // declares a variable 
+                                 // assigns value of 9 
+int F = 8;                       // declares a variable 
+                                 // assigns value of 8  
+int G = 7;                       // declares a variable
+                                 // assigns value of 7   
+int btn = 6;                     // declares a variable 
+                                 // assigns value of 6
+
+void setup(){                     // put your setup code here, to run once:
+  for(int i = 7 ; i <= 13 ; i++)  // declares i, tests if less or equal than 20, increments i by 1
+      pinMode(i, OUTPUT);         //declare i as an output
+}
+
+int count =0;                     // variable declaration
+void loop(){                      // put your main code here, to run repeatedly:
+   if(!digitalRead(btn)){
+      count++;
+      delay(200);                 // pause for 0.2 seconds
+    if(count>9)count = 0;         // if count greater than 9, reset again
+  }
+  char number[10] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F}; // declares char array with 10 positions
+  digitalWrite(A,  !bitRead(number[count], 0));  
+  digitalWrite(B,  !bitRead(number[count], 1));
+  digitalWrite(C,  !bitRead(number[count], 2));
+  digitalWrite(D,  !bitRead(number[count], 3));
+  digitalWrite(E,  !bitRead(number[count], 4));
+  digitalWrite(F,  !bitRead(number[count], 5));
+  digitalWrite(G,  !bitRead(number[count], 6));
+}
